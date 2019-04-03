@@ -94,7 +94,8 @@ Route::get('text-on-image','ImageUploadController@textOnImage')->name('textOnIma
 Route::get('/image', function()
 {
     $img = Image::make('uploads/images/download.jpg')->resize(300, 400);
-    $img->text( Auth::user()->name , 60, 50);
-    $img->text( Auth::user()->email , 100, 100);
+    $watermark = Image::make('uploads/images/cat.png')->resize(200,250);
+    $img->insert($watermark, 'center');
+
     return $img->response('jpg');
 });
