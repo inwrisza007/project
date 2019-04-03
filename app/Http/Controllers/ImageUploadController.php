@@ -155,4 +155,18 @@ class ImageUploadController extends Controller
 
     }
 
+    public function textOnImage()
+    {
+       $img = Image::make(public_path('uploads/images/download.jpg'));
+       $img->text('Hello coderMen', 120, 100, function($font) {
+          $font->file(public_path('path/font.ttf'));
+          $font->size(28);
+          $font->color('#4285F4');
+          $font->align('center');
+          $font->valign('bottom');
+          $font->angle(0);
+      });
+       $img->save(public_path('images/text_with_image.jpg'));
+    }
+
 }

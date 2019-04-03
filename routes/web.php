@@ -88,3 +88,13 @@ Route::post('form','FormController@store');
 Route::post('form','FormController@insert');
 Route::get('/test', 'UserController@test');
 */
+
+Route::get('text-on-image','ImageUploadController@textOnImage')->name('textOnImage');
+
+Route::get('/image', function()
+{
+    $img = Image::make('uploads/images/download.jpg')->resize(300, 400);
+    $img->text( Auth::user()->name , 60, 50);
+    $img->text( Auth::user()->email , 100, 100);
+    return $img->response('jpg');
+});
