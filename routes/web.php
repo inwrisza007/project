@@ -95,7 +95,18 @@ Route::get('/image', function()
 {
     $img = Image::make('uploads/images/download.jpg')->resize(300, 400);
     $watermark = Image::make('uploads/images/cat.png')->resize(200,250);
-    $img->insert($watermark, 'center');
 
+        $img->text(auth::user()->name, 50, 150,);
+        $img->text(auth::user()->id, 50, 200,);
+        $img->text('Hello coderMen', 50, 100, function($font) {
+
+
+            $font->align('center');
+            $font->valign('bottom');
+            $font->angle(0);
+        });
+
+    $img->insert($watermark, 'center');
+    $img->save('uploads/card/card.jpg');
     return $img->response('jpg');
 });

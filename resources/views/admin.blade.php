@@ -36,6 +36,7 @@
                     <a href="/create" class="button" input type="button" value="ข้อมูลส่วนตัว">upload </a>
                     <a href="/imageupload" class="button" input type="button" value="ข้อมูลส่วนตัว">upload </a>
                     <a href="/allmember" class="button" input type="button" value="ข้อมูลส่วนตัว">รายชื่อสมาชิก </a>
+                    <a href="/image" class="button" input type="button" value="ข้อมูลส่วนตัว">บัตรสมาชิก </a>
                 </div>
             </div>
         </div>
