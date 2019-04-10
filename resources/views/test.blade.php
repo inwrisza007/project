@@ -22,7 +22,7 @@
 </head>
 <body>
 
-        <button class="btn"><i class="fa fa-download"  <a href="{{ URL::to( 'uploads/card/' . $img)  }}" target="_blank">{{ $img }}</a>></i> Download</button>
+
 {{auth::user()->id}}
     <img src='uploads/card/card.jpg'>
 
