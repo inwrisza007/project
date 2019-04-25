@@ -24,17 +24,36 @@ Route::get('/test', function () {
 Route::get('/admin', function () {
     return view('admin');
 });
-Auth::routes();
+
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
 Route::get('/line', 'UserController@index2');
 Route::get('/userinfo', 'UserController@index1');
+Route::get('/test', 'memberController@k');
+//Route::get('register', 'memberController@k');
+
 
 
 
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/mregister', 'MregisterController@index');
 Route::get('/mregister', 'MregisterController@insert');
+
+// Authentication Routes...
+Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
+Route::post('login', 'Auth\LoginController@login');
+Route::post('logout', 'Auth\LoginController@logout')->name('logout');
+
+// Registration Routes...
+Route::get('register', 'Auth\RegisterController@showRegistrationForm')->name('register');
+Route::post('register', 'Auth\RegisterController@register');
+Route::post('auth.register', 'Auth\RegisterController@showRegistrationForm');
+
+// Password Reset Routes...
+Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm')->name('password.request');
+Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
+Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
+Route::post('password/reset', 'Auth\ResetPasswordController@reset');
 
 Route::middleware(['auth'])->group(function () {
     Route::get('/approval', 'HomeController@approval')->name('approval');

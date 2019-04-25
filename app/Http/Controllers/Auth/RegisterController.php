@@ -80,15 +80,18 @@ class RegisterController extends Controller
             'phonenumber' => $data['phonenumber'],
             'userid' => $data['userid'],
             'address' => $data['address'],
-            'parent_id' => $data['parent_id'],
+            //'parent_id' => $data['parent_id'],
+            'username' => $data['username'],
             'password' => Hash::make($data['password']),
 
         ]);
 
+        //DD($data);
         //$admin = User::where('admin', 1)->first();
 
 
         return $user;
+        return view(''/imageupload);
     }
 
     public function update_avatar(Request $request){
@@ -115,6 +118,14 @@ class RegisterController extends Controller
     	return view('profile', array('user' => Auth::user()) );
 
     }
+
+    public function showRegistrationForm()
+{
+    $member = \Illuminate\Support\Facades\DB::table('users')->orderby ('id','desc')->take(1)->get();
+
+    return view('auth.register', compact('member'));
+}
+
 
 
 

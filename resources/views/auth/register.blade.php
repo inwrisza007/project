@@ -106,11 +106,12 @@
 
                             <input type="hidden" name="_token" value="{{ csrf_token() }}">
 
+                            @foreach($member as $data)
 
 
 
-
-                        <input type="hidden" name = "parent_id" value="{{ Auth::user()->id }}">
+                        <input type="hidden" name = "username" value="k00{{$data->id+1}}">
+                        @endforeach
 
                         <div class="form-group row mb-0">
                             <div class="col-md-6 offset-md-4">

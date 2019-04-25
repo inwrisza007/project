@@ -44,4 +44,18 @@ class memberController extends Controller
         return view('/admin');
     }
 
+    public function k()
+    {
+
+
+        $member = \Illuminate\Support\Facades\DB::table('users')->orderby ('id','desc')->take(1)->get();
+
+
+
+
+        return view ('/test',compact('member'));
+
+
+    }
+
 }

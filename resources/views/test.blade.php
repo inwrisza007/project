@@ -22,6 +22,13 @@
 </head>
 <body>
 
+    @foreach($member as $data)
+
+
+    <table>
+        <td>k000{{$data->id+1}}</td></table>
+    <input type="text" name = "parent_id" value="{{$data->id}}">
+    @endforeach
 
 {{auth::user()->id}}
     <img src='uploads/card/card.jpg'>
