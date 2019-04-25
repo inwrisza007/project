@@ -38,7 +38,7 @@ Route::get('/test', 'memberController@k');
 Route::get('/home', 'HomeController@index')->name('home');
 //Route::get('/mregister', 'MregisterController@index');
 Route::get('/mregister', 'MregisterController@insert');
-
+Auth::routes();
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
 Route::post('login', 'Auth\LoginController@login');
