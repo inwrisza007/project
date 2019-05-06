@@ -30,7 +30,7 @@
                     @endif
 
                     <a href="/register" class="button" input type="button" value="สมัครสมาชิก">สมัครสมาชิก </a>
-                    <a href="/userinfo" class="button" input type="button" value="ข้อมูลส่วนตัว">ข้อมูลส่วนตัว </a>
+                    <a href="/profile" class="button" input type="button" value="ข้อมูลส่วนตัว">ข้อมูลส่วนตัว </a>
                     <a href="/users" class="button" input type="button" value="ข้อมูลส่วนตัว">ยืนยันการสมัคร </a>
                     <a href="/line" class="button" input type="button" value="ข้อมูลส่วนตัว">line </a>
                     <a href="/create" class="button" input type="button" value="ข้อมูลส่วนตัว">upload </a>

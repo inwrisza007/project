@@ -31,6 +31,10 @@
                 <td>{{$data->name}}</td>
                 </tr>
                 <tr>
+                    <td>หมายเลขสมาชิก</td>
+                    <td>{{$data->username}}</td>
+                    </tr>
+                <tr>
                 <td>เบอร์โทรศัพท์</td>
                 <td>{{$data->phonenumber}}</td>
                 </tr>

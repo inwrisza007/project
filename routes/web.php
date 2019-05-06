@@ -27,6 +27,7 @@ Route::get('/admin', function () {
 
 Route::get('profile', 'UserController@profile');
 Route::post('profile', 'UserController@update_avatar');
+Route::get('profile', 'UserController@index3');
 Route::get('/line', 'UserController@index2');
 Route::get('/userinfo', 'UserController@index1');
 Route::get('/test', 'memberController@k');
@@ -112,20 +113,42 @@ Route::get('text-on-image','ImageUploadController@textOnImage')->name('textOnIma
 
 Route::get('/image', function()
 {
-    $img = Image::make('uploads/images/download.jpg')->resize(300, 400);
+    $img = Image::make('uploads/images/card2.jpg')->resize(1000, 1000);
     $watermark = Image::make('uploads/images/cat.png')->resize(200,250);
 
-        $img->text(auth::user()->name, 50, 150,);
-        $img->text(auth::user()->id, 50, 200,);
-        $img->text('Hello coderMen', 50, 100, function($font) {
 
 
+        $img->text(auth::user()->name, 600, 540, function($font) {
+            $font->file(public_path('fonts/EkkamaiStandard-Light.ttf'));
+
+
+            $font->size(44);
             $font->align('center');
             $font->valign('bottom');
             $font->angle(0);
         });
 
-    $img->insert($watermark, 'center');
+        $img->text(auth::user()->phonenumber, 650, 700, function($font) {
+            $font->file(public_path('fonts/EkkamaiStandard-Light.ttf'));
+
+
+            $font->size(44);
+            $font->align('center');
+            $font->valign('bottom');
+            $font->angle(0);
+        });
+
+        $img->text(auth::user()->username, 250, 820, function($font) {
+            $font->file(public_path('fonts/EkkamaiStandard-Light.ttf'));
+
+
+            $font->size(44);
+            $font->align('center');
+            $font->valign('bottom');
+            $font->angle(0);
+        });
+
+    $img->insert($watermark, 'left');
     $img->save('uploads/card/card.jpg');
     return $img->response('jpg');
 });

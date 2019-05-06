@@ -11,7 +11,7 @@
              <th> เบอร์โทรศัพท์</th>
                  <th>ที่อยู่</th>
                  <th>ยืนยัน</th>
-                 <th>สายงาน</th>
+                 <th>ID</th>
                  <th>บัตรประชาชน</th>
                  <th>สำเนาทะเบียนบ้าน</th>
 
@@ -30,7 +30,7 @@
             <td>{{$data->phonenumber}}</td>
             <td>{{$data->address}}</td>
             <td>{{$data->approved_at}}</td>
-            <td>{{$data->parent_id}}</td>
+            <td>{{$data->username}}</td>
             <td>คลิก</td>
             <td>คลิก</td>
             <td>

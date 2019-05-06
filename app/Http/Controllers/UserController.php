@@ -21,6 +21,14 @@ class UserController extends Controller
          return view ('/userinfo',compact('test'));
 
     }
+
+    public function index3()
+    {
+        $test = \Illuminate\Support\Facades\DB::table('users')->where('id', Auth::user()->id )->get();
+        //dd($user);
+         return view ('/profile',compact('test'));
+
+    }
     public function index2()
     {
 
